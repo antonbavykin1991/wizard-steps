@@ -1,0 +1,11 @@
+{{#if this.isVisible}}
+  {{#let @wrapper as |Wrapper|}}
+    <Wrapper @name={{this.name}} @context={{@context}}>
+      {{yield (hash
+          prevStep=(fn this.prevStep)
+          nextStep=(fn this.nextStep)
+        )
+      }}
+    </Wrapper>
+  {{/let}}
+{{/if}}

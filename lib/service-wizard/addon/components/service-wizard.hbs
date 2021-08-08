@@ -1,0 +1,14 @@
+<StepManager as |w|>
+  {{yield (hash
+      Step=(component "service-wizard/item"
+        wrapper=w.Step
+        steps=w.steps
+        order=this.stepOrder
+        transitionTo=(fn w.transition-to)
+        registerStepOrder=(fn this.registerStepOrder)
+        unregisterStepOrder=(fn this.unregisterStepOrder)
+      )
+      steps=w.steps
+    )
+  }}
+</StepManager>
